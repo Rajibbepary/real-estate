@@ -18,7 +18,7 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "estate - PrebuiltUI",
+  title: "estate - Nextjs",
   description: "Helping families find their dream homes. Discover exceptional properties, expert advice, and a seamless buying or selling experience tailored to your goals.",
 };
 
