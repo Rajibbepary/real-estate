@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono, Urbanist } from "next/font/google";
 import "./globals.css";
 
@@ -17,22 +16,21 @@ const urbanist = Urbanist({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "estate - Nextjs",
-  description: "Helping families find their dream homes. Discover exceptional properties, expert advice, and a seamless buying or selling experience tailored to your goals.",
+  description:
+    "Helping families find their dream homes. Discover exceptional properties, expert advice, and a seamless buying or selling experience tailored to your goals.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${urbanist.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }

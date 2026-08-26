@@ -25,7 +25,7 @@ export function Contact() {
                         </span>
                     </motion.div>
 
-                    <motion.h2 className="text-3xl md:text-[40px]/11 text-zinc-900 mt-5 leading-tight font-medium max-w-[400px]"
+                    <motion.h2 className="text-3xl md:text-[40px]/11 text-zinc-900 mt-5 leading-tight font-medium max-w-100"
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         viewport={{ once: true }}
@@ -151,7 +151,7 @@ export function Contact() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
                 >
-                    <div className="relative w-[382px] h-[455px] overflow-hidden rounded-xl">
+                    <div className="relative w-95.5 h-113.75 overflow-hidden rounded-xl">
                         <Image src={houseImage} alt="Contact House" width={382} height={455} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 select-none brightness-80" />
 
                         {/* Details Content Overlay */}

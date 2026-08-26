@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CountUp from "@/components/count-number";
+import CountUp from "../components/count-number";
 
 export function Stats() {
     return (
@@ -18,7 +18,7 @@ export function Stats() {
                         PREMIUM REAL ESTATE
                     </span>
                 </motion.div>
-                <motion.h2 className="text-5xl md:text-6xl text-zinc-900 mt-8 leading-tight max-w-[610px]"
+                <motion.h2 className="text-5xl md:text-6xl text-zinc-900 mt-8 leading-tight max-w-152.5"
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -27,7 +27,7 @@ export function Stats() {
                     Find Your Dream Home With Confidence
                 </motion.h2>
 
-                <motion.p className="text-zinc-500 text-sm md:text-base mt-3 max-w-[520px]"
+                <motion.p className="text-zinc-500 text-sm md:text-base mt-3 max-w-130"
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
@@ -48,7 +48,7 @@ export function Stats() {
 
             <div className="flex max-lg:flex-col max-lg:gap-10 justify-between max-w-4xl mt-16 md:mt-20">
                 <div className="flex flex-col justify-center">
-                    <span className="text-4xl md:text-5xl min-w-[152px] text-zinc-900">
+                    <span className="text-4xl md:text-5xl min-w-38 text-zinc-900">
                         <CountUp from={0} to={5000} />+
                     </span>
                     <span className="text-sm text-zinc-600 mt-4">
@@ -59,7 +59,7 @@ export function Stats() {
                 <div className="max-lg:hidden h-20 w-px bg-zinc-200"></div>
 
                 <div className="flex flex-col justify-center">
-                    <span className="text-4xl md:text-5xl min-w-[200px] text-zinc-900">
+                    <span className="text-4xl md:text-5xl min-w-50 text-zinc-900">
                         $<CountUp from={0} to={500} />M+
                     </span>
                     <span className="text-sm text-zinc-600 mt-4">
@@ -70,7 +70,7 @@ export function Stats() {
                 <div className="max-lg:hidden h-20 w-px bg-zinc-200"></div>
 
                 <div className="flex flex-col justify-center">
-                    <span className="text-4xl md:text-5xl min-w-[94px] text-zinc-900">
+                    <span className="text-4xl md:text-5xl min-w-23.5 text-zinc-900">
                         <CountUp from={0} to={98} />%
                     </span>
                     <span className="text-sm text-zinc-600 mt-4">

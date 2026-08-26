@@ -12,7 +12,7 @@ export default function LenisScroll() {
             anchors: true,
         });
 
-        const raf = (time: number) => {
+        const raf = (time) => {
             lenis.raf(time);
             requestAnimationFrame(raf);
         };
