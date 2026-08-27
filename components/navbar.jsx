@@ -5,9 +5,10 @@ import React, { useState, useEffect } from "react";
 import LoginWrapper from "./LoginWrapper";
 
 export function Navbar() {
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
      const [showLogin, setShowLogin] = useState(false);
+
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
