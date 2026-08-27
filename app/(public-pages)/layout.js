@@ -6,10 +6,10 @@ import LenisScroll from '../../components/lenis-scroll';
 import LoginWrapper from '../../components/LoginWrapper';
 
 export const metadata = {
-    title: 'estate - PrebuiltUI',
+    title: 'real -Estate',
     description: 'estate is a real estate website template.',
     appleWebApp: {
-        title: 'estate - PrebuiltUI',
+        title: 'real -Estate',
     },
 };
 
