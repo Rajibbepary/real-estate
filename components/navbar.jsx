@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import LoginWrapper from "./LoginWrapper";
 
 export function Navbar() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [scrolled, setScrolled] = useState(false);
-
+     const [showLogin, setShowLogin] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -30,7 +31,7 @@ export function Navbar() {
                     <a href="#" className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>Contact</a>
                 </div>
 
-                <button className={`hidden md:block px-6 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
+                <button onClick={() => setShowLogin(true)} className={`hidden md:block px-6 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
                     Get Started
                 </button>
 
@@ -54,6 +55,10 @@ export function Navbar() {
                     </svg>
                 </button>
             </div>
+
+            {showLogin && (
+        <LoginWrapper onClose={() => setShowLogin(false)} />
+      )}
         </>
     );
 }
