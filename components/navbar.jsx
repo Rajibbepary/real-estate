@@ -2,12 +2,18 @@
 
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import LoginWrapper from "./LoginWrapper";
+
+import {
+  SignInButton,
+  SignUpButton,
+  UserButton,
+  useAuth,
+} from "@clerk/nextjs";
 
 export function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-     const [showLogin, setShowLogin] = useState(false);
+    const { isSignedIn, isLoaded } = useAuth();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -17,6 +23,9 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+      if (!isLoaded) {
+    return null;
+  }
     return (
         <>
             <nav className={`fixed z-50 flex items-center justify-between left-1/2 -translate-x-1/2 transition-all duration-500 p-4 ${scrolled ? "lg:w-5xl w-[calc(100vw-14px)] bg-white/60 backdrop-blur-2xl rounded-full mt-4 pl-6 shadow" : "md:px-16 lg:px-24 xl:px-32 w-full"}`}>
@@ -32,10 +41,37 @@ export function Navbar() {
                     <a href="#" className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>Contact</a>
                 </div>
 
-                <button onClick={() => setShowLogin(true)} className={`hidden md:block px-6 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
+                {/* <button onClick={() => setShowLogin(true)} className={`hidden md:block px-6 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
                     Get Started
-                </button>
+                </button> */}
 
+                {/* clerk start Now */}
+                    
+        {/* Authentication */}
+      <div className="flex items-center gap-3">
+
+        {!isSignedIn ? (
+          <>
+            <SignInButton mode="modal">
+              <button className="rounded-lg bg-black px-4 py-2 text-white">
+                Login
+              </button>
+            </SignInButton>
+
+            <SignUpButton mode="modal">
+              <button className="rounded-lg bg-blue-600 px-4 py-2 text-white">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </>
+        ) : (
+          <UserButton />
+        )}
+
+      </div>
+
+
+                {/* clerk End */}
                 <button onClick={() => setMobileOpen(true)} className={`md:hidden p-2 rounded-md aspect-square font-medium transition cursor-pointer ${scrolled ? "text-zinc-800" : "text-white"}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M4 12h16" /><path d="M4 18h16" /><path d="M4 6h16" />
@@ -56,10 +92,6 @@ export function Navbar() {
                     </svg>
                 </button>
             </div>
-
-            {showLogin && (
-        <LoginWrapper onClose={() => setShowLogin(false)} />
-      )}
         </>
     );
 }
