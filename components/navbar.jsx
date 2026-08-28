@@ -10,6 +10,7 @@ import {
   useAuth,
 } from "@clerk/nextjs";
 
+
 export function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -29,7 +30,7 @@ export function Navbar() {
     return (
         <>
             <nav className={`fixed z-50 flex items-center justify-between left-1/2 -translate-x-1/2 transition-all duration-500 p-4 ${scrolled ? "lg:w-5xl w-[calc(100vw-14px)] bg-white/60 backdrop-blur-2xl rounded-full mt-4 pl-6 shadow" : "md:px-16 lg:px-24 xl:px-32 w-full"}`}>
-                <a href="https://prebuiltui.com">
+                <a  href="https://prebuiltui.com">
                     <Image width={100} height={100} src="/logo.svg" alt="Logo" className={`transition-all duration-500 h-9 w-auto ${scrolled ? "invert opacity-80" : ""}`} />
                 </a>
 
@@ -41,35 +42,29 @@ export function Navbar() {
                     <a href="#" className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>Contact</a>
                 </div>
 
-                {/* <button onClick={() => setShowLogin(true)} className={`hidden md:block px-6 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
-                    Get Started
-                </button> */}
-
                 {/* clerk start Now */}
                     
         {/* Authentication */}
       <div className="flex items-center gap-3">
-
         {!isSignedIn ? (
           <>
             <SignInButton mode="modal">
-              <button className="rounded-lg bg-black px-4 py-2 text-white">
+              <button className={`hidden md:block px-6 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
                 Login
               </button>
             </SignInButton>
 
             <SignUpButton mode="modal">
-              <button className="rounded-lg bg-blue-600 px-4 py-2 text-white">
+              <button className={`hidden md:block px-6 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
                 Sign Up
               </button>
             </SignUpButton>
           </>
         ) : (
-          <UserButton />
+         <div className="hidden md:block"> <UserButton /></div>
         )}
 
       </div>
-
 
                 {/* clerk End */}
                 <button onClick={() => setMobileOpen(true)} className={`md:hidden p-2 rounded-md aspect-square font-medium transition cursor-pointer ${scrolled ? "text-zinc-800" : "text-white"}`}>
@@ -85,6 +80,25 @@ export function Navbar() {
                 <a href="#" onClick={() => { setMobileOpen(false) }} className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>Portfolio</a>
                 <a href="#" onClick={() => { setMobileOpen(false) }} className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>Services</a>
                 <a href="#" onClick={() => { setMobileOpen(false) }} className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>Contact</a>
+        {!isSignedIn ? (
+          <>
+            <SignInButton mode="modal">
+              <button className={` px-3 py-1.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
+                Login
+              </button>
+            </SignInButton>
+
+            <SignUpButton mode="modal">
+              <button className={` px-3 py-1.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
+                Sign Up
+              </button>
+            </SignUpButton>
+          </>
+        ) : (
+          <UserButton />
+        )}
+
+    
 
                 <button onClick={() => setMobileOpen(false)} className="md:hidden bg-white text-zinc-800 p-2 rounded-md aspect-square font-medium transition cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
