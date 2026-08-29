@@ -63,7 +63,8 @@ export function Gallery() {
     }, []);
 
     return (
-        <section
+        <section 
+            id="services"
             ref={containerRef}
             className="relative h-[180vh] w-full"
         >

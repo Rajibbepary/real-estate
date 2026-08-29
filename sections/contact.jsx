@@ -7,7 +7,7 @@ const houseImage = "/assets/house.png";
 
 export function Contact() {
     return (
-        <section className="py-20 w-full flex items-center justify-center">
+        <section id="contact" className="py-20 w-full flex items-center justify-center">
             <div className="max-w-5xl w-full mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
                 {/* Left Column: Contact Form */}
@@ -47,7 +47,7 @@ export function Contact() {
                                 >
                                     YOUR NAME
                                 </motion.label>
-                                <motion.input type="text" placeholder="Michael Anderson" className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors" 
+                                <motion.input type="text" placeholder="Your name..." className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors" 
                                     initial={{ y: 50, opacity: 0 }}
                                     whileInView={{ y: 0, opacity: 1 }}
                                     viewport={{ once: true }}
@@ -65,7 +65,7 @@ export function Contact() {
                                 >
                                     EMAIL ADDRESS
                                 </motion.label>
-                                <motion.input type="email" placeholder="michael@prebuiltUI.com" className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors" 
+                                <motion.input type="email" placeholder="rajib@gmail.com" className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors" 
                                     initial={{ y: 50, opacity: 0 }}
                                     whileInView={{ y: 0, opacity: 1 }}
                                     viewport={{ once: true }}
@@ -85,7 +85,7 @@ export function Contact() {
                                 >
                                     PHONE NUMBER
                                 </motion.label>
-                                <motion.input type="tel" placeholder="E.g. +123 456 789 00" className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors" 
+                                <motion.input type="tel" placeholder="B.D. +880 456 789 00" className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors" 
                                     initial={{ y: 50, opacity: 0 }}
                                     whileInView={{ y: 0, opacity: 1 }}
                                     viewport={{ once: true }}
@@ -103,7 +103,7 @@ export function Contact() {
                                 >
                                     SUBJECT
                                 </motion.label>
-                                <motion.input type="text" placeholder="E.g. Buying Property" className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors" 
+                                <motion.input type="text" placeholder="B.D. Buying Property" className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors" 
                                     initial={{ y: 50, opacity: 0 }}
                                     whileInView={{ y: 0, opacity: 1 }}
                                     viewport={{ once: true }}
@@ -122,7 +122,7 @@ export function Contact() {
                             >
                                 MESSAGE
                             </motion.label>
-                            <motion.textarea rows={4} placeholder="E.g. I want to buy a property" className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors resize-none" 
+                            <motion.textarea rows={4} placeholder="B.D. I want to buy a property" className="w-full border border-zinc-200 rounded-sm px-4 py-2.5 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-zinc-300 transition-colors resize-none" 
                                 initial={{ y: 50, opacity: 0 }}
                                 whileInView={{ y: 0, opacity: 1 }}
                                 viewport={{ once: true }}
