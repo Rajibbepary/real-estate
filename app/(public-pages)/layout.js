@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 // import { Footer } from '@/components/footer';
 import { Footer } from '../../components/footer';
 import { Navbar } from '../../components/navbar';
@@ -17,6 +18,7 @@ export default function Layout({ children }) {
     return (
         <>
             <LenisScroll />
+            <Toaster/>
             <Navbar />
             {children}
             <Footer />

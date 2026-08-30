@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const houseImage = "/assets/house.png";
 
@@ -42,7 +43,7 @@ export function Contact() {
       if (data.success) {
         setResult("Message Sent!");
 
-        alert("Form Submitted Successfully!");
+        toast.success("Form Submitted Successfully!");
 
         event.target.reset();
 
@@ -53,7 +54,7 @@ export function Contact() {
       } else {
         console.log("Error:", data);
 
-        alert(data.message || "Something went wrong!");
+        toast.error(data.message || "Something went wrong!");
 
         setResult("");
       }
