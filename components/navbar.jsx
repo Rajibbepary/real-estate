@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 
 import {
   SignInButton,
-  SignUpButton,
   UserButton,
   useAuth,
 } from "@clerk/nextjs";
@@ -42,31 +41,20 @@ export function Navbar() {
                     <a href="#contact" className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>Contact</a>
                 </div>
 
-                {/* clerk start Now */}
-                    
-        {/* Authentication */}
-      <div className="flex items-center gap-3">
-        {!isSignedIn ? (
-          <>
-            <SignInButton mode="modal">
-              <button className={`hidden md:block px-6 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
-                Login
-              </button>
-            </SignInButton>
-
-            <SignUpButton mode="modal">
-              <button className={`hidden md:block px-6 py-2.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
-                Sign Up
-              </button>
-            </SignUpButton>
-          </>
+   {/* clerk start Now */}
+     <div className="hidden md:block">
+       {!isSignedIn ? (
+          <SignInButton mode="modal">
+            <button className="px-4 py-2 rounded-md bg-black text-white hover:bg-zinc-800">
+              Get Started
+            </button>
+          </SignInButton>
         ) : (
-         <div className="hidden md:block"> <UserButton /></div>
+          <UserButton />
         )}
+     </div>
 
-      </div>
-
-                {/* clerk End */}
+               {/* clerk End */}
                 <button onClick={() => setMobileOpen(true)} className={`md:hidden p-2 rounded-md aspect-square font-medium transition cursor-pointer ${scrolled ? "text-zinc-800" : "text-white"}`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M4 12h16" /><path d="M4 18h16" /><path d="M4 6h16" />
@@ -80,26 +68,15 @@ export function Navbar() {
                 <a href="#about" onClick={() => { setMobileOpen(false) }} className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>About</a>
                 <a href="#services" onClick={() => { setMobileOpen(false) }} className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>Services</a>
                 <a href="#contact" onClick={() => { setMobileOpen(false) }} className={`transition-colors duration-500 ${scrolled ? "text-zinc-800 hover:text-zinc-600" : "text-white hover:text-white/90"}`}>Contact</a>
-        {!isSignedIn ? (
-          <>
-            <SignInButton mode="modal">
-              <button className={` px-3 py-1.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
-                Login
-              </button>
-            </SignInButton>
-
-            <SignUpButton mode="modal">
-              <button className={` px-3 py-1.5 rounded-md text-sm font-medium cursor-pointer transition-all duration-500 ${scrolled ? "bg-zinc-900 text-white hover:bg-zinc-800 rounded-full" : "bg-zinc-50 text-zinc-800 hover:bg-zinc-200"}`}>
-                Sign Up
-              </button>
-            </SignUpButton>
-          </>
-        ) : (
-          <UserButton />
-        )}
-
-    
-
+                {!isSignedIn ? (
+                <SignInButton mode="modal">
+                  <button className="px-4 py-2 rounded-md bg-black text-white hover:bg-zinc-800">
+                    Get Started
+                  </button>
+                </SignInButton>
+              ) : (
+                <UserButton />
+              )}
                 <button onClick={() => setMobileOpen(false)} className="md:hidden bg-white text-zinc-800 p-2 rounded-md aspect-square font-medium transition cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M18 6 6 18" /><path d="m6 6 12 12" />
