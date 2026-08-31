@@ -142,7 +142,7 @@ export function Footer() {
 
                 <div className="w-full h-px bg-zinc-800"></div>
                 <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-5 text-xs text-zinc-300">
-                    <p>Copyright 2026 © PrebuiltUI All Right Reserved.</p>
+                    <p>Copyright 2026 © All Right Reserved.</p>
                     <div className="flex items-center gap-6">
                         <a href="#" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
                         <a href="#" className="hover:text-white transition-colors duration-200">Terms of Service</a>
