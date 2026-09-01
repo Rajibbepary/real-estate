@@ -1,9 +1,8 @@
 import React from 'react';
 import { Toaster } from 'react-hot-toast';
- //import { Footer } from '@/components/footer';
- import { Footer } from '../../components/footer';
-import { Navbar } from '../../components/navbar';
-import LenisScroll from '../../components/lenis-scroll';
+import { Footer } from '@/components/footer';
+import { Navbar } from '@/components/navbar';
+import LenisScroll from '@/components/lenis-scroll';
 
 
 export const metadata = {
