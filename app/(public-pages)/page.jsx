@@ -6,6 +6,7 @@ import { HeroSection } from "@/sections/hero-sections";
 import { Stats } from "@/sections/stats";
 import { Testimonials } from "@/sections/testimonials";
 import  WhyChooseUs  from "@/sections/why-choose-us";
+import AddAddress from "../add-address/page";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <Contact />
+      <AddAddress/>
     </main>
   );
 }
